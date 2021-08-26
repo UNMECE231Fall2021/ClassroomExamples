@@ -2,7 +2,7 @@
 #include "Maths.h"
 
 int main() {
-	double a = 1.3, b = 5.1;
+	double a = 1.9, b = 3.1;
 
 	double res_add = add(a, b);
 	double res_mult = mult(a, b);
