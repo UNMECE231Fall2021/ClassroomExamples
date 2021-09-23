@@ -21,13 +21,20 @@ int main() {
 	Complex q;
 	q.real = (double *)malloc(1 * sizeof(double));
 	q.imag = (double *)calloc(1, sizeof(double));
-	
 	printf("%lf, %lf\n", *(q.real), *(q.imag));
+
+	Complex *z = (Complex *)malloc(1 * sizeof(Complex));
+	z->real = (double *)calloc(1, sizeof(double));
+	z->imag = (double *)malloc(1 * sizeof(double));
+	printf("%lf, %lf\n", *(z->real), *(z->imag));
 
 	free(a);
 	free(b);
 	free(q.real);
 	free(q.imag);
+	free(z->real);
+	free(z->imag);
+	free(z);
 
 	return 0;
 }
