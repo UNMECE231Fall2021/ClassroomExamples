@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <vector>
 
 int main() {
@@ -19,8 +20,20 @@ int main() {
 		std::cout << *i << ' ';
 	}
 	*/
+
 	for (const auto &x : v) {
 		std::cout << x << ' ';
+	}
+	std::cout << std::endl;
+
+	for(auto &x : v) {
+		x += 1;
+	}
+
+	std::vector<std::string> s = {"Hello", "how", "are", "you", "?"};
+
+	for (const auto &z : s) {
+		std::cout << z << ' ';
 	}
 	std::cout << std::endl;
 
