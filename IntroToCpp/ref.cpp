@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
 
-void print_vector(const std::vector<int> &v) {
+template <typename T>
+void print_vector(const std::vector<T> &v) {
 	for (const auto &x : v) {
 		std::cout << x << ' ';
 	}

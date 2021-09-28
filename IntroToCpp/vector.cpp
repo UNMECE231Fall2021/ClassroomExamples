@@ -19,6 +19,9 @@ int main() {
 	for (auto i = v.begin(); i != v.end(); ++i) {
 		std::cout << *i << ' ';
 	}
+	for (std::vector<int>::iterator i = v.begin(); i != v.end(); ++i) {
+		std::cout << *i << ' ';
+	}
 	*/
 
 	for (const auto &x : v) {
