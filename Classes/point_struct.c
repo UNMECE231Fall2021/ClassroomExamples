@@ -5,8 +5,8 @@ struct _point {
 	int y;
 	int z;
 
-	void (*print) (struct _point *);
-	void (*init) (struct _point, int, int, int);
+	void (*init) (struct _point *, int, int, int);
+	void (*print) (struct _point);
 };
 
 //typedef struct _point Point;

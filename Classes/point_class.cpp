@@ -7,6 +7,8 @@ class Point {
 		int _z;
 	public:
 		Point() : _x{0}, _y{0}, _z{0} {}
+		//Point(int x) : _x{x}, _y{0}, _z{0} {}
+		//Point(int x, int y) : _x{x}, _y{y}, _z{0} {}
 		Point(int x, int y, int z) : _x{x}, _y{y}, _z{z} {}
 		Point(const Point &p) : _x{p._x}, _y{p._y}, _z{p._z} {}
 		~Point() {}
@@ -40,14 +42,16 @@ class Point {
 			return _z;
 		}
 
-		void print() {
-			std::cout << x() << ' ' << _y << ' ' << z() << '\n';
+		void print() const {
+			std::cout << x() << ' ' << y() << ' ' << z() << '\n';
 		}
 };
 
 int main() {
-	Point q;
+	Point q(7, 12, 4);
 	q.set_x(5);
+
+	//q._x = 12;
 
 	q.print();
 
