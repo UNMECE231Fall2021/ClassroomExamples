@@ -1,5 +1,5 @@
-#ifndef _INTLIST_HPP
-#define _INTLIST_HPP
+#ifndef INT_LIST_HPP
+#define INT_LIST_HPP
 
 class IntList {
 	private:
@@ -21,6 +21,11 @@ class IntList {
 		~IntList();
 
 		size_t size() const;
+
+		void push_front(int value);
+		void pop_front();
+
+		bool empty();
 };
 
-#endif // _INTLIST_HPP
+#endif // INT_LIST_HPP
