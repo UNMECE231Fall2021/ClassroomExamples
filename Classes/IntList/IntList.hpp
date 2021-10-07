@@ -23,7 +23,10 @@ class IntList {
 		size_t size() const;
 
 		void push_front(int value);
+		void push_back(int value);
+
 		void pop_front();
+		void pop_back();
 
 		bool empty();
 };
