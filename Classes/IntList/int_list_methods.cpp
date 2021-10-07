@@ -96,7 +96,7 @@ void IntList::pop_back() {
 	delete node_to_delete;
 }
 
-bool IntList::empty() {
+bool IntList::empty() const {
 	return ( (_front == nullptr) && (_back == nullptr) );
 }
 

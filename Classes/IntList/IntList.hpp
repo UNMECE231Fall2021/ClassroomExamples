@@ -1,6 +1,8 @@
 #ifndef INT_LIST_HPP
 #define INT_LIST_HPP
 
+#include <cstddef>
+
 class IntList {
 	private:
 		struct _list {
@@ -28,7 +30,7 @@ class IntList {
 		void pop_front();
 		void pop_back();
 
-		bool empty();
+		bool empty() const;
 };
 
 #endif // INT_LIST_HPP
