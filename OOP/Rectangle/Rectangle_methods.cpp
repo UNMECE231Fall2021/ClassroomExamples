@@ -6,7 +6,8 @@ Rectangle::Rectangle() : _length{1}, _width{1} {
 	calc_perimeter();
 }
 
-Rectangle::Rectangle(int length) : _length{length}, _width{1} {
+Rectangle::Rectangle(int length) : _length{1}, _width{1} {
+	set_length(length);
 	calc_area();
 	calc_perimeter();
 }
