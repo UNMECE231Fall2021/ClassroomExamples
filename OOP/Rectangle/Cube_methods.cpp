@@ -7,7 +7,7 @@ Cube::Cube(int length, int width, int depth) : Rectangle(length, width), _depth{
 	calc_volume();
 }
 
-Cube::Cube(const Cube &c) : Rectangle(c._length, c._width), _depth{c._depth}, 
+Cube::Cube(const Cube &c) : Rectangle(c), _depth{c._depth}, 
 	_surface_area{c._surface_area}, _volume{c._volume} {}
 
 int Cube::depth() const {
