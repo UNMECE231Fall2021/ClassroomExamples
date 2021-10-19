@@ -16,6 +16,7 @@ int main() {
 
 	Cube c(a);
 	std::cout << a << '\n';
+	std::cout << b << '\n';
 	std::cout << c << '\n';
 
 	return 0;
