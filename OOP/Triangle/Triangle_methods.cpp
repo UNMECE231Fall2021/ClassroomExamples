@@ -21,11 +21,15 @@ void Triangle::set_base(int base) {
 	if (base > 0) {
 		_base = base;
 	}
+	calc_area();
+	calc_perimeter();
 }
 
 void Triangle::set_height(int height) {
 	assert(height > 0);
 	_height = height;
+	calc_area();
+	calc_perimeter();
 }
 
 int Triangle::base() const {
@@ -34,6 +38,14 @@ int Triangle::base() const {
 
 int Triangle::height() const {
 	return _height;
+}
+
+float Triangle::area() const {
+	return _area;
+}
+
+float Triangle::perimeter() const {
+	return _perimeter;
 }
 
 void Triangle::calc_area() {
@@ -46,6 +58,14 @@ void Triangle::calc_perimeter() {
 	_perimeter = base() + (2.0 * hyp);
 }
 
+bool Triangle::operator==(const Triangle &t) {
+	return (t._base == _base) && (t.height() == height());
+}
+
+bool Triangle::operator!=(const Triangle &t) {
+	return !(*this == t);
+}
+ 
 std::ostream &operator<<(std::ostream &out, const Triangle &t) {
 	out << t._base << ' ' << t._height << ' ' << t._area << ' ';
 	out << t._perimeter;

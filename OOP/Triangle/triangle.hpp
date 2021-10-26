@@ -22,8 +22,8 @@ class Triangle {
 
 		int base() const;
 		int height() const;
-		int area() const;
-		int perimeter() const;
+		float area() const;
+		float perimeter() const;
 
 		virtual void set_base(int base);
 		virtual void set_height(int height);

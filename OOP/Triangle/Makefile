@@ -2,8 +2,14 @@ GPP = g++ -std=c++17
 
 all: multishape
 
-multishape: Triangle_methods.o main.o
+multishape: Pyramid_methods.o Shape3D_methods.o Triangle_methods.o main.o
 	$(GPP) $^ -o $@
+
+Pyramid_methods.o: Pyramid_methods.cpp pyramid.hpp
+	$(GPP) -c $<
+
+Shape3D_methods.o: Shape3D_methods.cpp shape3D.hpp
+	$(GPP) -c $<
 
 Triangle_methods.o: Triangle_methods.cpp triangle.hpp
 	$(GPP) -c $<
