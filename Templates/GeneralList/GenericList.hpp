@@ -1,5 +1,5 @@
-#ifndef INT_LIST_HPP
-#define INT_LIST_HPP
+#ifndef GENERAL_LIST_HPP
+#define GENERAL_LIST_HPP
 
 #include <cstddef>
 #include <iostream>
@@ -146,4 +146,4 @@ std::ostream &operator<<(std::ostream &out, const SList<X> &l) {
 }
 
 
-#endif // INT_LIST_HPP
+#endif // GENERAL_LIST_HPP
