@@ -1,15 +1,12 @@
 GPP=g++ -std=c++17
 
-all: list_int
+all: glist
 
-list_int: main.o int_list_methods.o
+glist: main.o
 	$(GPP) $^ -o $@
 
-int_list_methods.o: int_list_methods.cpp IntList.hpp
-	$(GPP) -c $<
-
-main.o: main.cpp IntList.hpp
+main.o: main.cpp GenericList.hpp
 	$(GPP) -c $<
 
 clean:
-	-rm *.o list_int
+	-rm *.o glist

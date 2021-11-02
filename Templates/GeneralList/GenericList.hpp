@@ -103,7 +103,7 @@ class SList {
 			if (empty()) {
 				return;
 			}
-			List *node_to_delete = _front;
+			List *node_to_delete = _back;
 			if (_front->next == nullptr) {
 				_front = nullptr;
 				_back = nullptr;
@@ -124,8 +124,20 @@ class SList {
 			return ( (_front == nullptr) && (_back == nullptr) );
 		}
 
-		friend std::ostream &operator<<(std::ostream &out, const SList &l);
-		/*
+		SList &operator=(const SList &l) {
+			if (this == &l) { 
+				return *this; 
+			}
+			// Empty the list
+			while (!empty()) {
+				pop_front();
+			}
+			// Copy arg data to internal class
+			reccopy(l._front);
+			return *this;
+		}
+
+		//friend std::ostream &operator<<(std::ostream &out, const SList &l);
 		friend std::ostream &operator<<(std::ostream &out, const SList &l) {
 			List *temp;
 			for (temp = l._front; temp != nullptr; temp=temp->next) {
@@ -133,17 +145,17 @@ class SList {
 			}
 			return out;
 		}
-		*/
 };
 
+/*
 template <typename X>
 std::ostream &operator<<(std::ostream &out, const SList<X> &l) {
-	SList<X>::List *temp;
-	for (temp = l._front; temp != nullptr; temp=temp->next) {
+	//SList<X>::List *temp;
+	for (auto temp = l._front; temp != nullptr; temp=temp->next) {
 		out << temp->value << ' ';
 	}
 	return out;
 }
-
+*/
 
 #endif // GENERAL_LIST_HPP

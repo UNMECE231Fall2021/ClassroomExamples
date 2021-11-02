@@ -1,7 +1,8 @@
 #include <iostream>
-#include "IntList.hpp"
+#include "GenericList.hpp"
 
-void check_empty(const IntList &il) {
+template <typename T>
+void check_empty(const SList<T> &il) {
 	if (il.empty()) {
 		std::cout << "The list is empty!\n";
 	}
@@ -11,7 +12,7 @@ void check_empty(const IntList &il) {
 }
 
 int main() {
-	IntList ilist;
+	SList<int> ilist;
 
 	check_empty(ilist);
 
@@ -21,6 +22,18 @@ int main() {
 	check_empty(ilist);
 
 	ilist.push_back(5);
+
+	//std::cout << ilist.front() << ' ' << ilist.back() << ' ' << ilist.size();
+	//std::cout << '\n' << ilist << '\n';
+	SList<int> ilist2(ilist);
+	ilist2.pop_front();
+	ilist2.push_back(3);
+	ilist2.push_back(4);
+	ilist2.push_back(9);
+	ilist2.pop_back();
+	std::cout << ilist2 << '\n'; // 1 5 3 4
+	ilist2 = ilist2;
+	std::cout << ilist2 << '\n'; // 0 1 5
 
 	return 0;
 }
